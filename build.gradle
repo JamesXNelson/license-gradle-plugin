@@ -8,6 +8,7 @@ buildscript {
   }
   dependencies {
     classpath "com.gradle.publish:plugin-publish-plugin:0.9.1"
+    classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.4.8"
     classpath 'com.netflix.nebula:gradle-extra-configurations-plugin:2.2.+'
   }
 }
@@ -22,6 +23,9 @@ plugins {
 }
 
 apply plugin: 'com.github.hierynomus.license'
+
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.artifactory'
 
 defaultTasks 'build'
 
